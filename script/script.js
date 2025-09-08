@@ -141,7 +141,7 @@ const displayPlantDetails = (plant) => {
   const detailsBox = document.getElementById("details-container");
   detailsBox.innerHTML = `<h4 class="font-bold">${plant.name}</h4>
             <img src="${plant.image}" alt="" />
-            <h4><span class="font-bold"> Catagory: </span> Tree Shate </h4>
+            <h4><span class="font-bold"> Catagory: </span> ${plant.category} </h4>
             <h4><span class="font-bold"> Price: </span> ${plant.price} </h4>
             <h4>
               <span class="font-bold"> Description:</span> ${plant.description}
