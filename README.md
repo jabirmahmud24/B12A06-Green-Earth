@@ -27,16 +27,16 @@
 #### 3) What are arrow functions in ES6?
 
 **Ans:**
-Arrow functions are a short, neat way to write functions using =>. It gives us the power to write short code than traditional function method.
+Arrow functions are a short, neat way to write functions using `=>`. It gives us the power to write short code than traditional function method.
 
 #### 4) How does destructuring assignment work in ES6?
 
 **Ans:**
 Destructuring lets you grab values from arrays or objects into variables easily.
-For example: const [a, b] = [10, 20] or const {name, age} = person;
+For example: `const [a, b] = [10, 20]` or `const {name, age} = person;`
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
 
 **Ans:**
-Template literals use backticks ` and let us embed expressions like ${...}.
-They’re easier to read and write, support multi-line text, short and cleaner than using + to join strings.
+Template literals use backticks `and let us embed expressions like`${...}`.
+They’re easier to read and write, support multi-line text, short and cleaner than using `+` to join strings.
