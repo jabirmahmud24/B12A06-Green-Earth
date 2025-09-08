@@ -1,4 +1,8 @@
-**Live Website: https://jabirmahmud24.github.io/B12A06-Green-Earth/**
+**Github Repository:** https://github.com/jabirmahmud24/B12A06-Green-Earth
+
+**Github Live Website:** https://jabirmahmud24.github.io/B12A06-Green-Earth/
+
+**Netlify Live Website:** https://green-earth-jabirmahmud24.netlify.app/
 
 #### 7) Create a README file to answer the following question-
 

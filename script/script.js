@@ -1,7 +1,5 @@
 const categoryContainer = document.getElementById("category-container");
 const cardContainer = document.getElementById("card-container");
-
-// const allPlantsContainer = document.getElementById("all-plants-container");
 const manageSpinner = (status) => {
   if (status == true) {
     document.getElementById("spinner").classList.remove("hidden");
@@ -89,7 +87,7 @@ const showCategory = (categories) => {
 };
 const loadTreesByCategory = (categoryId) => {
   manageSpinner(true);
-  console.log(categoryId);
+  // console.log(categoryId);
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
     .then((data) => {
@@ -134,7 +132,7 @@ const showTreesByCategory = (plants) => {
 };
 const loadPlantDetail = async (id) => {
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
-  console.log(url);
+  // console.log(url);
   const res = await fetch(url);
   const details = await res.json();
   displayPlantDetails(details.plants);
@@ -169,7 +167,7 @@ cardContainer.addEventListener("click", (e) => {
       .querySelector("h3 span").textContent;
 
     updateCart(plantName, plantPrice);
-    console.log(plantPrice);
+    // console.log(plantPrice);
   }
 });
 
