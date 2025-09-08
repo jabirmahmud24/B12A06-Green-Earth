@@ -2,7 +2,17 @@ const categoryContainer = document.getElementById("category-container");
 const cardContainer = document.getElementById("card-container");
 
 // const allPlantsContainer = document.getElementById("all-plants-container");
+const manageSpinner = (status) => {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    cardContainer.classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    cardContainer.classList.remove("hidden");
+  }
+};
 const loadAllPlants = () => {
+  manageSpinner(true);
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => {
@@ -41,6 +51,7 @@ const showAllPlantsByCategory = (plants) => {
     
     `;
   });
+  manageSpinner(false);
 };
 
 loadAllPlants();
@@ -77,6 +88,7 @@ const showCategory = (categories) => {
   });
 };
 const loadTreesByCategory = (categoryId) => {
+  manageSpinner(true);
   console.log(categoryId);
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
@@ -88,24 +100,6 @@ const loadTreesByCategory = (categoryId) => {
     .catch((err) => {
       console.log(err);
     });
-};
-const loadPlantDetail = async (id) => {
-  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
-  console.log(url);
-  const res = await fetch(url);
-  const details = await res.json();
-  displayPlantDetails(details.plants);
-};
-const displayPlantDetails = (plant) => {
-  const detailsBox = document.getElementById("details-container");
-  detailsBox.innerHTML = `<h4 class="font-bold">${plant.name}</h4>
-            <img src="${plant.image}" alt="" />
-            <h4><span class="font-bold"> Catagory: </span> Tree Shate </h4>
-            <h4><span class="font-bold"> Price: </span> ${plant.price} </h4>
-            <h4>
-              <span class="font-bold"> Description:</span> ${plant.description}
-            </h4>`;
-  document.getElementById("my_modal_1").showModal();
 };
 const showTreesByCategory = (plants) => {
   cardContainer.innerHTML = "";
@@ -136,10 +130,31 @@ const showTreesByCategory = (plants) => {
     
     `;
   });
+  manageSpinner(false);
+};
+const loadPlantDetail = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  console.log(url);
+  const res = await fetch(url);
+  const details = await res.json();
+  displayPlantDetails(details.plants);
+};
+const displayPlantDetails = (plant) => {
+  const detailsBox = document.getElementById("details-container");
+  detailsBox.innerHTML = `<h4 class="font-bold">${plant.name}</h4>
+            <img src="${plant.image}" alt="" />
+            <h4><span class="font-bold"> Catagory: </span> Tree Shate </h4>
+            <h4><span class="font-bold"> Price: </span> ${plant.price} </h4>
+            <h4>
+              <span class="font-bold"> Description:</span> ${plant.description}
+            </h4>`;
+  document.getElementById("my_modal_1").showModal();
 };
 
 loadCategory();
-// Global variable to store total price
+
+// Total calculation Section Started
+
 let totalPrice = 0;
 
 cardContainer.addEventListener("click", (e) => {
