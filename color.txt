@@ -1,3 +1,0 @@
-Green: #15803D;
-Yelolow: #FACC15;
-Hero Section: #CFF0DC;
