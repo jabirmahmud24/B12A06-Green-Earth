@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Earth</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <!-- DAISY UI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FONT AWESOME CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS (Custom) -->
+    <link rel="stylesheet" href="style.css" />
+    <!--Inter FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="bg-[#15803D]">
+        <div
+          class="navbar max-w-7xl mx-auto px-4 sm:px-10 md:px-15 lg:px-20 py-4"
+        >
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost bg-white mr-4 lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-green-200 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li><a>About</a></li>
+                <li><a>Gallery</a></li>
+                <li><a>Plant a Tree</a></li>
+              </ul>
+            </div>
+            <div class="flex justify-center items-center gap-2">
+              <img class="w-8 h-8" src="./assets/favicon.png" alt="" />
+              <a href="#"
+                ><h4 class="text-2xl font-semibold text-white">
+                  Geen Earth
+                </h4></a
+              >
+            </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-white">
+              <li><a>About</a></li>
+              <li><a>Gallery</a></li>
+              <li><a>Plant a Tree</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <button
+              class="btn shadow-none bg-[#FACC15] text-[#15803D] border-none rounded-3xl font-semibold"
+            >
+              Plant A Tree
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section class="bg-[#CFF0DC]">
+        <div
+          class="max-w-7xl mx-auto py-10 flex justify-center items-center bg-[url('./assets/hero-leaf1.png'),url('./assets/hero-leaf2.png')] bg-[position:bottom_left,bottom_right] bg-no-repeat bg-[length:250px,250px]"
+        >
+          <!-- Cneter Text -->
+          <div class="text-center max-w-[50%]">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+              Plant a Tree, Grow a Future
+            </h1>
+            <p class="text-gray-500">
+              Join our mission to plant 1 million trees and make the Earth
+              greener for future generations.
+            </p>
+            <button
+              class="btn shadow-none bg-[#FACC15] text-[#15803D] border-none rounded-3xl font-semibold mt-5"
+            >
+              Get Involved
+            </button>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main class="bg-[#F0FDF4]">
+      <!-- Shopping Section Start -->
+      <section
+        class="flex flex-col md:grid md:grid-cols-3 lg:grid lg:grid-cols-5 gap-10 p-4 sm:p-12 lg:p-20"
+      >
+        <!-- Categories (Left: 1 Col) -->
+        <div class="col-span-1">
+          <aside>
+            <h4 class="font-semibold text-xl">Categories</h4>
+            <!-- Category Container -->
+            <ul id="category-container" class="flex flex-col">
+              <!-- <li
+                id="all-plants-container"
+                class="bg-[#15803D] hover:bg-[#15803D50] text-left w-full pl-2"
+              >
+                All Plants
+              </li> -->
+            </ul>
+          </aside>
+        </div>
+        <!-- Cards (Center: 3 Col) -->
+        <div
+          id="card-container"
+          class="md:col-span-2 lg:col-span-3 flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-4"
+        >
+          <!-- Dynamic Card Will be placed here -->
+        </div>
+        <!-- Cart Summary (Right: 1 Col) -->
+        <div class="col-span-3 lg:col-span-1">
+          <p class="font-bold">Your Cart 🛒</p>
+          <!-- Selected Trees -->
+          <div id="cart-container" class="flex flex-col gap-2">
+            <!-- All selected carts will placed here -->
+          </div>
+          <p class="font-bold text-right p-4">
+            Total: <span id="total-price">0.00</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <div id="details-container" class="space-y-5"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <footer></footer>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
